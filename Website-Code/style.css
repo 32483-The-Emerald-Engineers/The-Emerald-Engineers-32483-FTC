@@ -29,63 +29,68 @@ body {
 }
 
 /* ==========================================================================
-   ALWAYS-ON TOP BAR (Flipped Layout Styles)
+   ALWAYS-ON TOP BAR (Custom Color Accents)
    ========================================================================== */
 .mobile-header {
   display: flex;
-  justify-content: space-between; /* Pushes the hamburger left and the branding right */
+  justify-content: space-between;
   align-items: center;
-  background-color: var(--midnight-emerald);
-  color: var(--white);
+  background-color: var(--gold-light); /* Changed to Light Gold background */
+  color: var(--midnight-emerald);       /* Dark green text for contrast */
   padding: 10px 24px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 2000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* Aligns the button perfectly to the left */
+/* Hamburger button with dark green backdrop */
 .hamburger-btn {
-  background: none;
+  background-color: var(--midnight-emerald); /* Dark green backdrop */
   border: none;
-  color: var(--gold);
-  font-size: 2rem;
+  color: var(--gold);                        /* Regular gold icon */
+  font-size: 1.6rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;                       /* Clean rounded corner block */
   cursor: pointer;
-  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
   padding: 0;
 }
 
 .hamburger-btn:hover {
-  color: var(--gold-light);
+  background-color: var(--emerald-light);
+  color: var(--white);
 }
 
-/* Container to hold the text title and logo image closely together on the right */
 .header-right-group {
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
-/* Aligns text to the right side next to the logo */
 .mobile-brand {
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
   letter-spacing: 1px;
   text-align: right;
+  color: var(--midnight-emerald); /* Forces title text to dark green */
 }
 
-/* Logo styling with the sharp gold outline border */
+/* Updated logo container with gold outline */
 .header-logo {
   width: 45px;
   height: 45px;
-  object-fit: contain;
-  border: 2px solid var(--gold); /* Your team gold outline */
-  border-radius: 50%; /* Smooth circle contour around the icon image */
-  background-color: var(--white); /* Crisp background fill behind your emblem */
-  padding: 2px;
+  object-fit: cover;                 /* Crop profile to square/circle neatly */
+  border: 2px solid var(--gold);     /* Team gold outline */
+  border-radius: 50%;                /* Circular framing */
+  background-color: var(--white);
 }
 
 /* ==========================================================================
