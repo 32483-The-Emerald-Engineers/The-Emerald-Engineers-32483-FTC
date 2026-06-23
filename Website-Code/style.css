@@ -449,11 +449,13 @@ background-color: var(--ivory);
   grid-template-columns: repeat(3, 1fr); /* Forms exactly 3 items per row */
   gap: 25px;
   margin-bottom: 60px;
+  align-items: stretch; /* Ensures all cards are the same height */
+  align-items: center; /* Centers cards vertically in the grid */
+  align-items: start;
 }
 
-/* Card Styling */
 .member-card {
-  background-color: var(--midnight-emerald); /* Your Light Green/Cream */
+  background-color: var(--midnight-emerald); 
   border-radius: 16px;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 64, 0, 0.1);
@@ -461,6 +463,9 @@ background-color: var(--ivory);
   flex-direction: column;
   align-items: center;
   text-align: center;
+  
+  /* ADDED LINE: Smooths out the card shape changing size */
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
 }
 
 .member-name {
@@ -508,11 +513,7 @@ background-color: var(--ivory);
   margin-top: auto; /* Pushes the dropdown bar exactly to the bottom of the card */
   padding-top: 12px;
   display: inline-block;
-  background: linear-gradient(90deg, var(--gold-light), var(--gold));
-  padding: 6px 12px;
-  border-radius: 999px;
-  color: var(--charcoal);
-  font-weight: 700;
+  /* Removed background, padding, and border-radius from here */
 }
 
 .bio-summary {
@@ -526,6 +527,13 @@ background-color: var(--ivory);
   align-items: center;
   justify-content: center;
   gap: 6px;
+
+  /* MOVED AND UPGRADED BUTTON STYLES HERE: */
+  background: linear-gradient(90deg, var(--gold-light), var(--gold));
+  padding: 8px 16px;
+  border-radius: 999px;
+  width: fit-content; /* Keeps the pill snugly fit around the text */
+  margin: 0 auto;    /* Centers the pill button inside the card */
 }
 
 .bio-summary::-webkit-details-marker {
@@ -538,8 +546,10 @@ background-color: var(--ivory);
   transition: transform 0.2s ease;
 }
 
-.bio-dropdown[open] .bio-summary::after {
-  transform: rotate(180deg); /* Flips arrow up when reading bio */
+/* Forces the opening animation onto absolutely every card layout on the grid */
+.bio-dropdown[open] .bio-content,
+.bio-dropdown[open] summary + .bio-content {
+  animation: smoothReveal 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
 }
 
 .bio-content {
@@ -549,12 +559,21 @@ background-color: var(--ivory);
   line-height: 1.5;
   color: var(--charcoal);
   text-align: left;
-
   background-color: rgba(255, 255, 255, 0.6);
   padding: 12px;
   border-radius: 8px;
   max-height: 200px;
-  overflow-y: auto; /* Adds custom internal scrolling if bios are exceptionally long */
+  overflow-y: auto;
+
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.miniHeaderBio {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 16px;
+  color: var(--charcoal);
+  font-weight: 700;
 }
 
 /* Responsiveness adjustments for smaller browser screens */
@@ -567,5 +586,22 @@ background-color: var(--ivory);
 @media (max-width: 650px) {
   .team-grid {
     grid-template-columns: 1fr; /* Single column stack on phones */
+  }
+}
+
+/* Triggers the fade-in animation whenever the dropdown opens */
+.bio-dropdown[open] .bio-content {
+  animation: smoothReveal 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* The timeline animation for the text reveal */
+@keyframes smoothReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
