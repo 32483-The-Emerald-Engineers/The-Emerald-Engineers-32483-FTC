@@ -24,21 +24,17 @@ function startCountdown(targetDateStr, elemIdPrefix) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const menuToggle = document.getElementById('menuToggle');
+const menuToggle = document.getElementById('menuToggle');
 const sidebar = document.querySelector('.sidebar');
+const sidebarClose = document.getElementById('sidebarClose');
 
+// Opens/closes from the main header button
 menuToggle.addEventListener('click', () => {
-  // Toggle the active class on the sidebar to slide it in/out
   sidebar.classList.toggle('active');
-  
-  // Toggle the open class on the button to trigger the CSS rotation
-  menuToggle.classList.toggle('open');
-  
-  // Swap the icon character based on whether the menu is open or closed
-  if (sidebar.classList.contains('active')) {
-    menuToggle.textContent = '✕'; // Elegant close icon
-  } else {
-    menuToggle.textContent = '☰'; // Standard hamburger icon
-  }
+});
+
+// Closes when clicking the new "X" inside the sidebar
+sidebarClose.addEventListener('click', () => {
+  sidebar.classList.remove('active');
 });
 });
