@@ -453,7 +453,7 @@ background-color: var(--ivory);
 
 /* Card Styling */
 .member-card {
-  background-color: var(--gold-light); /* Your Light Green/Cream */
+  background-color: var(--midnight-emerald); /* Your Light Green/Cream */
   border-radius: 16px;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 64, 0, 0.1);
@@ -466,13 +466,19 @@ background-color: var(--ivory);
 .member-name {
   font-family: 'Orbitron', sans-serif;
   font-size: 20px;
-  color: #004d00;
   margin: 0 0 4px 0;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .member-role {
+  font-family: 'Alata', sans-serif;
   font-size: 13px;
-  color: #006400;
+  color: var(--ivory);
   margin: 0 0 16px 0;
   font-weight: 600;
   line-height: 1.4;
@@ -500,14 +506,19 @@ background-color: var(--ivory);
 .bio-dropdown {
   width: 100%;
   margin-top: auto; /* Pushes the dropdown bar exactly to the bottom of the card */
-  border-top: 1px solid rgba(0, 77, 0, 0.15);
   padding-top: 12px;
+  display: inline-block;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold));
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--charcoal);
+  font-weight: 700;
 }
 
 .bio-summary {
   font-family: 'Comfortaa', sans-serif;
   font-size: 14px;
-  color: #004d00;
+  color: var(--charcoal);
   font-weight: 700;
   cursor: pointer;
   list-style: none; /* Removes native system arrow indicators */
@@ -532,11 +543,13 @@ background-color: var(--ivory);
 }
 
 .bio-content {
+  font-family: Comfortaa, sans-serif;
   margin-top: 10px;
   font-size: 13px;
   line-height: 1.5;
-  color: #333;
+  color: var(--charcoal);
   text-align: left;
+
   background-color: rgba(255, 255, 255, 0.6);
   padding: 12px;
   border-radius: 8px;
