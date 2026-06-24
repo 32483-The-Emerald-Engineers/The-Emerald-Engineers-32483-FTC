@@ -331,6 +331,33 @@ background-color: var(--ivory);
   .hero h1 { font-size: 32px; }
 }
 
+.heroes {
+  padding: 30px;
+  border-radius: 12px;
+  background: var(--midnight-emerald);
+  box-shadow: 0 8px 30px rgba(0, 0, 0,0,15);
+  margin-bottom:20px;
+}
+
+.heroes h2 {
+  font-family: Orbitron, sans-serif;
+  font-size: 44px;
+  margin: 8px 0 12px;
+  text-align: center;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.heroes p {
+  font-family: Comfortaa, sans-serif;
+  font-size: 18px;
+  color: var(--ivory);
+  text-align: center;
+}
+
 .lead {
   color: var(--white);
   max-width: 800px;
