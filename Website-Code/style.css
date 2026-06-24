@@ -727,3 +727,109 @@ background-color: var(--ivory);
   0%   { transform: translate(0, 0) rotate(0deg); }
   100% { transform: translate(50px, 30px) rotate(30deg); }
 }
+
+/* ==========================================================================
+   DROPDOWN MENU STYLING (For the sidebar navigation) 
+   ========================================================================== */
+
+.dropdown summary {
+  list-style: none;
+}
+.dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+/* 2. Main Parent Link Row (Resources Line) */
+.dropdown-title {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 15px;
+  
+  /* COLOR & FONT: Swapped to your team's gold and Orbitron font */
+  color: var(--gold, #D4AF37);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px; /* Adjust this number if your other links are larger/smaller */
+  
+  /* THICKNESS: Normalizes it to match standard link weights */
+  font-weight: 800; 
+  letter-spacing: 1px; /* Orbitron looks great with a tiny bit of tracking */
+  
+  /* Text smoothing to keep the font clean and balanced */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. The Decorative Circle Button Container */
+.arrow-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(212, 175, 55, 0.1); /* Subtle gold tint */
+  border: 1px solid var(--gold, #D4AF37);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover effects for the parent row container */
+.dropdown-title:hover .arrow-circle {
+  background-color: var(--gold, #D4AF37);
+}
+.dropdown-title:hover .arrow {
+  border-left-color: var(--midnight-emerald, #004d00);
+}
+
+/* 4. The Arrow Character inside the Circle */
+.dropdown .arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  
+  /* EQUILATERAL GEOMETRY: Adjust these border numbers to scale the triangle size */
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10.39px solid var(--gold, #D4AF37); /* Length calculated for equilateral proportions */
+  
+  /* NUDGE TO TRUE CENTER: Text boxes have slight offsets. 
+     This minor adjustment centers the visual weight inside the parent circle */
+  margin-left: 3px; 
+  
+  /* SPIN AXIS: Anchors the rotation pivot precisely to the triangle's visual center */
+  transform-origin: 33% 50%; 
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotate(0deg);
+}
+
+.dropdown[open] .arrow {
+  transform: rotate(90deg);
+}
+
+/* 5. Subpage Links Dropdown Panel Indentation */
+.dropdown-subpages {
+  padding-left: 30px; /* Safely indents subpage blocks inward */
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid rgba(212, 175, 55, 0.15); /* Sleek vertical separator line */
+  margin-left: 25px; /* Aligns line nicely right beneath parent text */
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+/* 6. Individual Subpage Link Attributes */
+.dropdown-subpages a {
+  padding: 8px 15px;
+  font-size: 0.95em; /* Marginally scaled down to show clear sub-hierarchy */
+  opacity: 0.85;
+  font-family: 'Orbitron', sans-serif;
+  text-decoration: none;
+  color: var(--gold);
+
+  transition: opacity 0.2s ease;
+}
+
+.dropdown-subpages a:hover {
+  opacity: 1;
+}

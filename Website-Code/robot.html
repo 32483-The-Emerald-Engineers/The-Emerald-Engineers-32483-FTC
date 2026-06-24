@@ -9,20 +9,45 @@
 </head>
 <body>
 
-  <aside class="sidebar">
-    <div class="logo-area">
-      <img class="logo" src="images/logo.png" alt="The Emerald Engineers Logo">
-    </div>
-    <div class="brand">The Emerald Engineers<br><small>FTC Team #32483</small></div>
-    <nav class="nav">
-      <a href="index.html" >Home</a>
-      <a href="robot.html" class="active">Robot & Notebook</a>
+  <div class="mobile-header">
+  <button id="menuToggle" class="hamburger-btn">☰</button>
+  
+  
+  <div class="header-right-group">
+    <div class="mobile-brand">The Emerald Engineers</div>
+    <img src="Images/currentLogo.png" alt="The Emerald Engineers Logo" class="header-logo">
+  </div>
+</div>
+
+<aside class="sidebar">
+  <button id="sidebarClose" class="sidebar-close-btn">✕</button>
+
+  <div class="brand">
+    MENU
+    <br>
+  </div>
+  <nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="team.html">Meet the Team</a>
+  
+  <details class="dropdown">
+    <summary class="dropdown-title">
+      Resources
+      <span class="arrow-circle"><span class="arrow"></span></span> 
+    </summary>
+    <div class="dropdown-subpages">
+      <a href="robot.html" class="active">Our Robot</a>
+      <a href="mission.html">Mission Statement</a>
       <a href="outreach.html">Outreach</a>
-      <a href="sponsors.html">Sponsor Us</a>
-      <a href="feedback.html">Feedback</a>
-      <a href="sponsors.html">Sponsors</a>
-    </nav>
-  </aside>
+      <a href="programs.html">Programs</a>
+    </div>
+  </details>
+  
+  <a href="sponsors.html">Sponsor Us</a>
+  <a href="feedback.html">Feedback</a>
+</nav>
+</aside>
     
 <style>
    .container p {
