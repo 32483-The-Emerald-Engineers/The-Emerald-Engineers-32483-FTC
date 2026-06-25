@@ -833,3 +833,86 @@ background-color: var(--ivory);
 .dropdown-subpages a:hover {
   opacity: 1;
 }
+
+/* Styles links that are sitting inside paragraphs */
+p a {
+  color: var(--gold, #D4AF37);
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+p a:hover {
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   SPONSOR US FORM DROPDOWN STYLING
+   ========================================================================== */
+
+.form-dropdown-container {
+  max-width: none; 
+  margin: 40px auto;
+  padding: 0; 
+}
+
+/* Hide default browser summary arrows */
+.form-dropdown summary {
+  list-style: none;
+}
+.form-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.form-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--midnight-emerald);
+  color: var(--gold);
+  padding: 15px 25px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  min-width: 1120px;
+}
+
+.form-btn:hover {
+  background: var(--gold, #D4AF37);
+  color: var(--midnight-emerald, #004d00);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Plus/Minus Icon styling */
+.form-btn .toggle-icon {
+  font-size: 50px;
+  font-weight: light;
+  transition: transform 0.5s ease;
+}
+
+/* Change icon from + to - when the form section is open */
+.form-dropdown[open] .form-btn .toggle-icon {
+  transform: rotate(45deg); 
+}
+
+/* Wrapper for the embedded Microsoft Form */
+.form-content {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Makes sure the Microsoft Form iframe stays responsive on mobile devices */
+.form-content iframe {
+  width: 1110px;
+  min-height: 600px; /* Gives the form plenty of room to display without scrolling */
+}
