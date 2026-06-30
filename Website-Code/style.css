@@ -1490,3 +1490,46 @@ p a:hover {
   color: var(--ivory);
   line-height: 1.6;
 }
+
+/* ==========================================================================
+   Article Hub Sytling
+   ========================================================================== */
+
+.article-hub {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.category-section {
+  margin-bottom: 30px;
+}
+
+.category-title {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--gold);
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/*==================================== The Horizontal Scroll Engine ======================================*/
+
+.scroll-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 15px;
+  scroll-behavior: smooth;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: var(--midnight-emerald);
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+}
