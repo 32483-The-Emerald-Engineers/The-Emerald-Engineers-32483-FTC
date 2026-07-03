@@ -5,11 +5,13 @@
   --midnight-emerald: #0B2912;
   --emerald-light: #165c36;
   --gold: #E1A928;
+  --gold-mid: #f3d48a;
   --gold-light: #eedbb0;
   --ivory: #FDFBF7; 
   --charcoal: #1C241E;
   --white: #ffffff;
   --ivory-cream: #DAC0A7;
+  --bisque: #FFE4C4;
 }
 
 /* ==========================================================================
@@ -1560,7 +1562,7 @@ p a:hover {
   height: 300px;
   padding: 30px;
   box-sizing: border-box;
-  background: linear-gradient(var(--ivory-cream), var(--ivory));
+  background: linear-gradient(var(--gold-light), var(--gold-mid));
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   text-decoration: none;
@@ -1574,7 +1576,7 @@ p a:hover {
 .article-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-  border: 7px solid var(--gold-light);
+  border: 7px solid var(--ivory);
 }
 
 .article-card h3 {
@@ -1603,10 +1605,17 @@ p a:hover {
   color: var(--charcoal);
   font-size: 12px;
   opacity: 0.8;
-  background: linear-gradient(var(--gold), var(--gold-light));
+  background: linear-gradient(var(--ivory-cream), var(--bisque));
   border-radius: 999px;
   display: inline-block;
   padding: 6px 12px;
+}
+
+.card-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .category-row-wrapper {
