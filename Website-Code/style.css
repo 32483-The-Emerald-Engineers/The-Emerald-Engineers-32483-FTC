@@ -1687,8 +1687,8 @@ p a:hover {
 }
 
 /* ==========================================================================
-   Sidebar Contact Details Styling
-   ========================================================================== */
+Sidebar Contact Details Styling
+========================================================================== */
 
 .sidebar-contact {
   margin-top: auto;
@@ -1757,4 +1757,34 @@ p a:hover {
 
 .sidebar-socials a:hover .sidebar-contact-icon, .contact-email a:hover .sidebar-contact-icon {
   color: var(--midnight-emerald);
+}
+
+
+/* ==========================================================================
+Robot Page Styling
+========================================================================== */
+
+/*==================================== ARC Section ======================================*/
+
+.robot-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 8rem;
+  font-weight: 700;
+  letter-spacing: 12px;
+  text-align: center;
+  margin: 0;
+  background: linear-gradient(to bottom, var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 4px 12px rgba(223, 177, 67, 0.3));
+}
+
+.-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
 }
