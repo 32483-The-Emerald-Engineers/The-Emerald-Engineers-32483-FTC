@@ -1767,6 +1767,16 @@ Robot Page Styling
 /*==================================== ARC Section ======================================*/
 
 .robot-title {
+  display: flex;
+  padding: 12px;
+  background: var(--midnight-emerald);
+  width: 1120px;
+  height: 200px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.robot-title h3 {
   font-family: 'Cinzel Decorative', serif;
   font-size: 8rem;
   font-weight: 700;
@@ -1779,6 +1789,7 @@ Robot Page Styling
   -webkit-text-fill-color: transparent;
   color: transparent;
   filter: drop-shadow(0 4px 12px rgba(223, 177, 67, 0.3));
+  text-transform: uppercase;
 }
 
 .-section {
