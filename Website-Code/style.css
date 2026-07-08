@@ -571,6 +571,80 @@ background-color: var(--ivory);
   object-fit: cover;
 }
 
+.mentors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  padding: 50px 20px;
+}
+
+.mentor-card {
+  background-color: linear-gradient(90deg, var(--ivory-cream), var(-bisque));
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 64, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.mentor-card {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(90deg, var(--ivory-cream), var(--bisque));
+  border-radius: 16px;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.mentor-card-inner {
+  transform: rotate(-45deg);
+  text-align: center;
+  width: 140%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mentor-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--ivory);
+  margin-bottom: 8px;
+}
+
+.mentor-card-inner h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  margin: 0;
+  background: linear-gradient(90deg, var(--midnight-emerald), var(--emerald-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mentor-role {
+  font-family: 'Alata', sans-serif;
+  font-size: 13px;
+  color: var(--charcoal);
+  margin-top: 4px;
+}
+
+.mentor-card:hover {
+  transform: rotate(45deg) scale(1.08);
+  border-color: var(--emerald-light);
+}
+
 /* Summary Memo Dropdowns */
 .bio-dropdown {
   width: 100%;

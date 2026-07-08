@@ -8,26 +8,54 @@
 </head>
 <body>
 
-  <aside class="sidebar">
-    <img class="logo" src="images/logo.png" alt="logo">
-    <div class="brand">The Emerald Engineers<br><small>FTC Team #32483</small></div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="mission.html">Our Mission</a>
-      <a href="team.html">Team</a>
-      <a href="robot.html">Robot & Notebook</a>
-      <a href="outreach.html">Outreach & Mentoring</a>
-      <a href="sponsors.html">Sponsors</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-      <a href="youtube.html">YouTube</a>
-      <a href="feedback.html">Feedback</a>
-      <a href="extra.html">Extra</a>
-    </nav>
-  </aside>
+  <div class="mobile-header">
+  <button id="menuToggle" class="hamburger-btn">☰</button>
+  
+  
+  <div class="header-right-group">
+    <div class="mobile-brand">The Emerald Engineers</div>
+    <img src="Images/currentLogo.png" alt="The Emerald Engineers Logo" class="header-logo">
+  </div>
+</div>
+
+
+<aside class="sidebar">
+  <button id="sidebarClose" class="sidebar-close-btn">✕</button>
+
+  <div class="brand">
+    MENU
+    <br>
+  </div>
+  <nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="team.html">Meet the Team</a>
+  
+  <details class="dropdown">
+    <summary class="dropdown-title">
+      Resources
+      <span class="arrow-circle"><span class="arrow"></span></span> 
+    </summary>
+    <div class="dropdown-subpages">
+      <a href="robot.html">Our Robot</a>
+      <a href="mission.html">Mission Statement</a>
+      <a href="outreach.html">Outreach</a>
+      <a href="programs.html">Programs</a>
+      <a href="articleHub.html">Article Hub</a>
+    </div>
+
+  </details>
+  
+  <a href="gallery.html" class="active">Team Gallery</a>
+  <a href="sponsors.html">Sponsor Us</a>
+  <a href="feedback.html">Feedback</a>
     
 <div class="container">
+
+  <div class="heroes">
+    <h2>Team Gallery</h2>
+    <p>Here are photos of our team at work, competing, or just having fun!</p>
+  </div>"
 <h2>Gallery</h2><p>Placeholder: Photos from competitions and builds.</p>
 
 <!-- Paste this just before </body> -->
