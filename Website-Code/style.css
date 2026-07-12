@@ -17,6 +17,16 @@
 /* ==========================================================================
    GLOBAL STYLES (Applies to all devices)
    ========================================================================== */
+
+/* Add to the top of your CSS file */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden; /* Stops horizontal scrolling caused by overflowing elements */
+}
+
 * {
   box-sizing: border-box;
 }
@@ -1838,26 +1848,41 @@ Sidebar Contact Details Styling
 Robot Page Styling
 ========================================================================== */
 
+*, *::beofre, *::after {
+  box-sizing: border-box;
+}
+
 /*==================================== ARC Section ======================================*/
+
+.robot-arc-title-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
 
 .robot-title {
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 12px;
   background: var(--midnight-emerald);
-  width: 1120px;
+  width: 800px;
   height: 200px;
   border-radius: 12px;
-  margin-bottom: 30px;
+  margin: 0 auto 30px auto;
+  border: 1px solid rgba(223, 177, 67, 0.2);
 }
 
 .robot-title h3 {
+  grid-column: 2;
   font-family: 'Cinzel Decorative', serif;
   font-size: 8rem;
   font-weight: 700;
   letter-spacing: 12px;
   text-align: center;
   margin: 0;
-  background: linear-gradient(to bottom, var(--gold), var(--gold-light));
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1866,10 +1891,183 @@ Robot Page Styling
   text-transform: uppercase;
 }
 
-.-section {
+.arc-title-image-box {
+  grid-column: 3;
+  width: 300px;
+  height: 200px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 40px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--gold-light);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.arc-title-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ==========================================================================
+Team Gallery Styling                                                          
+========================================================================== */
+
+.season-dropdown-container {
+  max-width: none; 
+  margin: 40px auto;
+  padding: 0;
+}
+
+.season-dropdown summary {
+  list-style: none;
+}
+
+.season-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.season-dropdown-btn {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, var(--ivory-cream), var(--bisque));
+  color: var(--charcoal);
+  padding: 15px 25px;
+  font-family: 'Alata', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  min-width: 1120px;
+  transform: transition 0.3s ease;
+}
+
+.season-dropdown-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Plus/Minus Icon styling */
+.season-dropdown-btn .toggle-icon {
+  font-size: 50px;
+  font-weight: light;
+  transition: transform 0.5s ease;
+}
+
+/* Change icon from + to - when the form section is open */
+.season-dropdown-btn[open] .form-btn .toggle-icon {
+  transform: rotate(45deg); 
+}
+
+/* Wrapper for the embedded Microsoft Form */
+.dropdown-content {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--charcoal);
+  z-index: 2;
+}
+
+.poki-gallery-grid {
+  display: grid !important; /* Forces grid mode */
+  
+  grid-template-columns: repeat(4, 1fr); 
+  
+  grid-auto-rows: 180px; 
+  
+  gap: 12px; /* Spacing between tile cards */
+  padding: 15px;
+}
+
+.gallery-item {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== Large Square ===== */
+.gallery-item.largeSquare {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* ===== Wide Tile ===== */
+.gallery-item.wide {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+/* ===== Tall Tile ===== */
+.gallery-item.tall {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.gallery-item.normal {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 600px) {
+  /* On small screens, reset tiles to 1 column so they fit nicely */
+  .gallery-item.wide,
+  .gallery-item.tall,
+  .gallery-item.featured {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+/* On mobile screens smaller than 768px, drop down to 2 columns */
+@media (max-width: 768px) {
+  .poki-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Update your dropdown container */
+.dropdown-container, 
+.dropdown-content {
+  width: 100%;             /* Takes up 100% of the available screen space */
+  max-width: 1200px;       /* Limits max width on large monitors */
+  box-sizing: border-box;  /* Prevents padding from causing horizontal scrollbars */
+  margin: 0 auto;          /* Keeps it centered on the page */
+}
+
+footer {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  /* Ensure child flex/grid boxes inside the footer shrink cleanly: */
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between;
 }
