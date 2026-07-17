@@ -2001,6 +2001,24 @@ Sidebar Contact Details Styling
   user-select: none;
 }
 
+#robot-360-viewer {
+  width: 100%;             
+  max-width: 300px;  
+  max-height: 300px;      
+  margin: 0 auto;         
+  overflow: hidden;        
+}
+
+#arc-viewer-img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;  /* STRICTLY stops the image from outgrowing the box width */
+  max-height: 100%; /* STRICTLY stops the image from blowing up the box height */
+  object-fit: cover;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
 /* ==========================================================================
 Team Gallery Styling                                                          
 ========================================================================== */
