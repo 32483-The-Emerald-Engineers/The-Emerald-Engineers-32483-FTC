@@ -76,16 +76,30 @@
     <p>This is where we will update information on our robots. We will update this section with new iterations of our robot throughout the season. You can also view our past robots as well!</p>
   </div>
 
-  <div class="robot-arc-title-section">
-    <div class="robot-title">
-      <h3> ARC </h3>
+<details class="clean-dropdown">
+  <summary class="dropdown-trigger">
+    <span>FTC DECODE Season (2025-2026)</span>
+    <span class="chevron">+</span>
+  </summary>
+
+  <div class="dropdown-content">
+    <div class="robot-arc-title-section">
+      <div class="robot-title">
+        <h3>ARC</h3>
+      </div>
+
+      <div class="arc-title-image-box">
+        <img src="images/CinematicArc.png" alt="Cinematic ARC">
+      </div>
+
     </div>
 
-    <div class="arc-title-image-box">
-      <img src="images/CinematicArc.heic" alt="Cinematic Arc">
+    <div class="arc-viewer-container" id="robot-360-viewer">
+      <img src="0deg/1.jpg" id="arc-viewer-img" alt="ARC 360 View" draggable="true">
     </div>
+
   </div>
-
+</details>
 
 
 
@@ -143,5 +157,6 @@
 </div>
 <script src="main.js"></script>
 <script src="floatingShapes.js"></script>
+<scirpt src="viewer.js"></script>
 </body>
 </html>
