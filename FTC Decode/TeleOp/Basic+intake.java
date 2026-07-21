@@ -29,12 +29,14 @@ public class Basic+intake extends LinearOpMode {
 
         // Intake Hardware Mapping
         intakeMotor = hardwareMap.get(DcMotor.class, "intakeMotor");
-
+        
+        // ALWAYS SET THE DIAGNOLS REVERSE
         // Set directions matching your robot's configuration
         frontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
         backLeft.setDirection(DcMotorSimple.Direction.REVERSE);
-        frontRight.setDirection(DcMotorSimple.Direction.FORWARD);
-        backRight.setDirection(DcMotorSimple.Direction.FORWARD);
+        
+        //frontRight.setDirection(DcMotorSimple.Direction.FORWARD); Don't really need this line cause it defaults to forward if nothing is assinged to the value/motor
+        //backRight.setDirection(DcMotorSimple.Direction.FORWARD); Don't really need this line cause it defaults to forward if nothing is assinged to the value/motor
 
         // Enable braking behavior to make stopping more precise
         frontLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
