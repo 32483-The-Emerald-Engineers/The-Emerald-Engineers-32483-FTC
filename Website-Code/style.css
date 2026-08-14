@@ -2045,7 +2045,7 @@ Team Gallery Styling
   background: linear-gradient(90deg, var(--ivory-cream), var(--bisque));
   color: var(--charcoal);
   padding: 15px 25px;
-  font-family: 'Alata', sans-serif;
+  font-family: 'Comfortaa', sans-serif;
   font-size: 22px;
   font-weight: bold;
   letter-spacing: 2px;
@@ -2054,7 +2054,7 @@ Team Gallery Styling
   transition: all 0.25s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   min-width: 1120px;
-  transform: transition 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .season-dropdown-btn:hover {
@@ -2068,12 +2068,15 @@ Team Gallery Styling
   transition: transform 0.5s ease;
 }
 
+.season-dropdown[open] .season-dropdown-btn .toggle-icon {
+  transform: rotate(405deg);
+}
+
 /* Change icon from + to - when the form section is open */
 .season-dropdown-btn[open] .form-btn .toggle-icon {
   transform: rotate(45deg); 
 }
 
-/* Wrapper for the embedded Microsoft Form */
 .dropdown-content {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(212, 175, 55, 0.2);
