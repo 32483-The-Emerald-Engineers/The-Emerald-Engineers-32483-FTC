@@ -1854,7 +1854,13 @@ Sidebar Contact Details Styling
   padding: 0;
 }
 
-/* ==================================== ARC Header Section ====================================== */
+@media (max-width: 600px) {
+  .robot-title-block h3 {
+    font-size: 48px;
+  }
+}
+
+/* ==================================== ARC Section ====================================== */
 
 .robot-arc-title-section {
   display: flex;
@@ -1864,6 +1870,7 @@ Sidebar Contact Details Styling
   width: 100%;
   max-width: 1120px;
   margin: 0 auto 30px auto;
+  margin-bottom: 20px;
   box-sizing: border-box;
 }
 
@@ -1883,9 +1890,9 @@ Sidebar Contact Details Styling
 
 .robot-arc-title h3 {
   font-family: 'Cinzel Decorative', serif;
-  font-size: clamp(3.5rem, 6vw, 6.5rem);
+  font-size: 150px;
   font-weight: 700;
-  letter-spacing: 8px;
+  letter-spacing: 20px;
   text-align: center;
   margin: 0;
   white-space: nowrap;
@@ -1918,6 +1925,66 @@ Sidebar Contact Details Styling
   object-fit: cover;
 }
 
+.arc-viewer-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto 30px auto;
+  box-sizing: border-box;
+}
+
+.arc-viewer-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: var(--midnight-emerald);
+  height: 700px;
+  width: 400px;
+  flex: 1;
+  border-radius: 12px;
+  border: 1px solid rgba(223, 177, 67, 0.2);
+  box-sizing: border-box;
+}
+
+.arc-viewer-text h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 25px;
+  color: var(--gold);
+  text-decoration: underline;
+  margin-top: 20px;
+}
+
+.arc-viewer-text p {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 17px;
+  text-align: left;
+  color: var(--ivory);
+  line-height: 2;
+  margin-bottom: 10px;
+}
+
+.arc-viewer-text h2 {
+  font-family: 'Alata', sans-serif;
+  font-size: 20px;
+  color: var(--gold-light);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.arc-text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.arc-strengths-weaknesses-section {
+
+}
+
 /* ==================================== Dropdown Container ====================================== */
 
 .arc-dropdown {
@@ -1937,13 +2004,14 @@ Sidebar Contact Details Styling
   padding: 12px 16px;
   font-family: 'Comfortaa', sans-serif;
   font-size: 1.2rem;
-  color: var(--gold-light);
+  color: var(--charcoal);
   cursor: pointer;
   user-select: none;
   border: none;
   background: transparent;
   outline: none;
   list-style: none;
+  text-decoration: underline;
 }
 
 /* Fixed Typo: webkit-details-marker */
@@ -1986,8 +2054,8 @@ Sidebar Contact Details Styling
 /* ==================================== 360 Viewer ====================================== */
 
 .arc-viewer-container {
-  flex: 1; /* Dynamically sizes to occupy left side space seamlessly next to info block */
-  height: 600px; /* Adjusted down from 800px slightly so it lines up with side text panes neatly */
+  flex: 2; /* Dynamically sizes to occupy left side space seamlessly next to info block */
+  height: 700px; /* Adjusted down from 800px slightly so it lines up with side text panes neatly */
   background: radial-gradient(circle, var(--midnight-emerald), var(--emerald-light));
   border: 2px solid var(--gold-light);
   border-radius: 16px;
@@ -2003,8 +2071,8 @@ Sidebar Contact Details Styling
 
 #robot-360-viewer {
   width: 100%;             
-  max-width: 300px;  
-  max-height: 300px;      
+  max-width: 900px;  
+  max-height: 700px;      
   margin: 0 auto;         
   overflow: hidden;        
 }
